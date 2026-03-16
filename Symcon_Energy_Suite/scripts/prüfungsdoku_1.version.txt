@@ -1,0 +1,54 @@
+
+1. Projektbeschreibung
+
+Die vorhandene Gebäudesystemintegration soll überprüft und erweitert werden. Es gibt keine Dokumentation, daher muss diese im Nachhinein auch für die bestehende Installation angefertigt werden.
+Da es sich bei der Erweiterung um z.B. eine Wärmepumpe und mehreren Wallboxen handelt, muss der §14a des Energiewirtschaftsgesetzes betrachtet und durch ein robustes Energiemanagement umgesetzt werden. Außerdem
+sollen Meldungen bzgl. Wasser-, Feuer- und Einbruchsalarm in die Elektroinstallation eingepflegt werden. Diese bekommt man mit HTML Requests.
+
+2. Ist – Analyse
+Eine Fehlerhafte ETS-Projektdatei ist bereits vorhanden. Das Dokument der berichtigten Fehler finden Sie in Anhang "A1-Fehlersuche". Die Loxone-Projektdatei war bis auf Firmendetails leer, hier muss alles hinzugefügt werden.
+Außerdem muss über die Umsetzung des Energiemanagements nachgedacht werden.
+
+3. Soll-Konzept
+3.1 Planung
+Die Loxone-Komponenten müssen mit KNX kommunizieren. Hier ist das Loxone KNX Gateway naheliegend. Außerdem muss, aufgrund der Größe des Gesamtprojektes (mehrere Etagen) eine andere Linienstruktur gewählt werden.
+Es ist möglich das Energiemanagement mit Loxone umsetzen. Hier muss Vor- und Nachteilen abgewogen werden.
+3.2 Entwicklung von Lösungen
+Zur Erreichung der Projektziele und Erfüllung der Anforderungen des Auftraggebers wird nun eine konkrete technische Lösung gesucht. 
+Hierfür werden zwei der am naheliegendsten Lösungskonzepte ausgearbeitet und gegenübergestellt. 
+3.2.1 Erste Lösung
+Die reine Loxone Lösung besticht durch ihre vergleichsweise Einfachheit. Durch die bereits vorgefertigten Bausteine ist wenig Know-How nötig und der zeitliche Aufwand hält sich in Grenzen.
+In einem System zu bleiben verringert Störanfälligkeiten. Air Geräte werden in diesem Projekt nicht benutzt. Die Tree- und Link-Geräte sind in dem Projekt schon fest verplant und können nicht mehr geändert werden.
+Die Lösung ist proprietär und undurchsichtig. Das führt manchmal zu merkwürdigen Outputs der Bausteine. Wenn Loxone bestimmte Funktionen nicht anbieten kann oder möchte, kann nur ein anspruchsvoller Work-Around
+Abhilfe leisten. Die Hauptarbeit mit der Visualisierung ist mit einem Häkchen setzen der gewollten Bauteile getan. Loxone besticht durch die geringe Latenz bei Automatik-Abläufen 
+(direkte Steuerung des Master-Miniservers).
+
+3.1.3 Zweite Lösung
+Die zusätzliche Anbindung einer Symbox hat mehrere Vor-, aber natürlich auch Nachteile. Die Nachteile sind die höhere Störanfälligkeit und schwierigere Fehlersuche. Außerdem handelt sich sich hierbei um eine Lösung,
+die für unerfahrene Nutzer durch die höhere Flexibilität mit einer steileren Lernkurve einhergehen. Im Kontrast dazu stehen die Freiheiten einer Programmiersprache wie PHP, Funktionen wie Ablaufdiagramme und die hohe Flexibilität in der Wahl von
+Bussystemen. Die Symbox bietet eine offene API und ist durch offene Standards zukunftsicher. Die Visualisierung reicht von einer nur gering langsameren Umsetzung als Loxone es anbietet bis Jahresprojekte, da auch hier einem Freiheiten gesetzt sind, die es woanders nicht in dem Ausmaß gibt. Die zusätzlichen Kosten eines extra
+Gerätes wird durch die Zukunftsfähigkeit dieser Lösung wett gemacht. Man kann durch das sogenannte Debuggen alle Werte verstehen und nachvollziehen. Aufgrund der dargelegten Vorteile hinsichtlich Flexibilität, Erweiterbarkeit und Zukunftssicherheit fiel die Wahl auf die Lösung mit Symbox und IP-Symcon. Damit konnte ein zukunftsfähiges, modulares und transparentes Gebäudemanagement realisiert werden.
+Wie die Verbindungsmöglichkeiten aussehen, zeigt Anhang "A2-GSI-Doku".
+ 
+4. Durchführung
+4.2 Installation KNX
+Es wird mit zwei Linien gearbeitet. Auf der sogenannten Hauptlinie kommt mein Energiemanagement. Dieses muss Linienübergreifend auf alle nötigen Komponenten zugreifen können. Für die Topologie von je Stockwerk
+eine Linie habe ich mich entschieden um den Datenverkehr des relativ langsamen Busses einzudämmen. Die Gruppenadressen, Topologie, etc. finden Sie in den Anhängen mit Anfangsbuchstabe "B"
+4.2.1 Loxone
+Nachfolgend kommt in Bildern die benötigte Loxone Programmierung.
+Für Größere Bilder schauen Sie sich bitte die Anhänge mit Anfangsbuchstabe "C" an.
+4.2.2 Symbox
+Hier werden nun die nötigen Variablen für die jeweiligen PHP-Scripte gezeigt.
+Für die jeweiligen Scripte mit kurzer Erklärung schauen Sie sich bitte die Anhänge mit Anfangsbuchstabe "C" an.
+
+ 
+
+5. Überprüfen des Installierten Systems
+5.1 Verhalten des Systems bei Verbindungsausfall
+Es wurde ein redundantes System aufgebaut mit Kontrollinstanzen der jeweiligen Bussysteme und Informationsverarbeitungsgeräte. Hier wird bei Systemausfall auf eine andere vorhandene Verbindungsart zurückgegriffen.
+Ein redundantes Energiemanagement kann ggf. nachgerüstet werden.
+5.2 Überprüfung der Brandmelde- und Einbruchmeldezentrale
+ 
+ 
+
+7. Anhang

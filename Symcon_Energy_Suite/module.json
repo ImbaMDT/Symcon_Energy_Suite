@@ -1,0 +1,17 @@
+{
+    "id": "{146F29F9-789E-D507-95FA-127E02A50703}",
+    "name": "Symcon_Energy_Suite",
+    "type": 3,
+    "vendor": "",
+    "aliases":
+    [
+        "SES"
+    ],
+    "url": "https://www.symcon.de",
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "DE"
+
+}
+
