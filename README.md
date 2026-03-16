@@ -197,27 +197,32 @@ Das System erkennt:
 
 IP-Symcon
 │
-├ Energiemanagement
-│   ├ Energiesteuerung
-│   ├ Fair-Share Lastverteilung
-│   └ Hausanschlussüberwachung
+├── Energiemanagement
+│   Steuerung der Energieflüsse und Verbraucher
+│   ├── Energiesteuerung
+│   ├── Fair-Share Lastverteilung
+│   └── Hausanschlussüberwachung
 │
-├ Energiemonitoring
-│   ├ Verbrauchsberechnung
-│   ├ Plausibilitätsprüfung
-│   └ Verlauf
+├── Energiemonitoring
+│   Analyse und Überwachung des Energieverbrauchs
+│   ├── Verbrauchsberechnung
+│   ├── Plausibilitätsprüfung
+│   └── Verlauf
 │
-├ Zählerverwaltung
-│   ├ Zähler-Skalierung
-│   ├ Differenzzähler
-│   └ Dashboard
+├── Zählerverwaltung
+│   Verwaltung und Skalierung der Energiezähler
+│   ├── Zähler-Skalierung
+│   ├── Differenzzähler
+│   └── Dashboard
 │
-├ Sicherheitsüberwachung
-│   ├ Alarmstatus
-│   └ Fehlerhistorie
+├── Sicherheitsüberwachung
+│   Überwachung sicherheitsrelevanter Zustände
+│   ├── Alarmstatus
+│   └── Fehlerhistorie
 │
-└ Kommunikationsüberwachung
-    └ Fallback-Logik
+└── Kommunikationsüberwachung
+    Überwachung externer Systeme und Busverbindungen
+    └── Fallback-Logik
 
 ---
 
